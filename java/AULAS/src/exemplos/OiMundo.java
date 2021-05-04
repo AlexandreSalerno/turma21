@@ -7,9 +7,9 @@ public class OiMundo {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
-			
-		int numero1 = 10, numero2 = 30;
+		
 		String nome;
+		int numero1 = 10, numero2 = 30;
 		double salario;
 		
 		System.out.println("Digite o nome: ");
@@ -22,6 +22,7 @@ public class OiMundo {
 		System.out.println("Digite o salário: ");
 		salario = leia.nextDouble();
 		
+		System.out.println();
 		System.out.println("Nome: " + nome);
 		System.out.println("Salário: " + salario);
 		System.out.println(numero1 + numero2);
