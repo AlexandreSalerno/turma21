@@ -4,186 +4,257 @@ programa {
 	inclua biblioteca Calendario
 	
 	funcao inicio() {
-		/*Trabalho em Equipe do Grupo:6*/
-		/*Alune:Lorrans Facca Fez: Caracter,logico,inteiro,real,msg, escreva e leia*/
-		/*Alune:Alexandre     Fez:                                                 */
-		/*Alune:Isa           Fez:                                                 */
-		/*Alune:Arthur        Fez:                                                 */
-		/*Alune:Israel        Fez:                                                 */
-
-		/*
-		caracter nome,sair,valor,movimento
-		logico status = falso
-		inteiro matricula,diaAniversario,contadorBoletim,numero
-	     real pontos,bonus,credito,creditoMestrado
-	     cadeia cpf,msg
-	     */
-
-	     inteiro codigo = 0, numeroStatus = 0, matricula = 0, diaAniversario = 0, tipo = 0, lancamento = 0
-	     real pontos = 0.0, movimentos[10], valorMovimento = 0.0
-	     cadeia categoria = "", nome = "", cpf = ""
+		const inteiro MOVIMENTOS = 10
+		const cadeia SLOGAN = "SEU FUTURO COMECA AQUI!"
+	     inteiro codigo = 0, numeroStatus = 0, matricula = 0, diaAniversario = 0, lancamento = 0
+	     real pontos = 0.0, movimentos[MOVIMENTOS], valorMovimento = 0.0
+	     cadeia nome = "", cpf = "", categoria = "", mensagemFim = "OBRIGADO POR NAVEGAR EM NOSSA PAGINA (ESCOLA G6)"
 	     caracter continuarMovimento = 'S', operacao, solicitarBoletim
-	     logico opcaoCorreta = falso, status = falso
+	     logico opcaoValida = falso, status = falso, sair = falso
 
 	     faca {
-	     	escreva ("\n\n")
-
-		     escreva("--ESCOLA G6--\n")
-		     escreva("--SLOGAN--\n")
+		     escreva("ESCOLA G6\n")
+		     escreva(SLOGAN + "\n\n")
 	
-		     escreva("1 - BﾃヾICO\n")
-		     escreva("2 - Mﾃ吋IO\n")
-		     escreva("3 - GRADUAﾃ�ﾃグ\n")
-		     escreva("4 - Pﾃ鉄\n") 
-		     escreva("5 - MESTRADO\n")     
+		     escreva("1 - BASICO\n")
+		     escreva("2 - MEDIO\n")
+		     escreva("3 - GRADUACAO\n")
+		     escreva("4 - POS\n")
+		     escreva("5 - MESTRADO\n")
 		     escreva("6 - SAIR\n")
 	
-			escreva("DIGITE O Cﾃ泥IGO DA OPﾃ�ﾃグ SELECIONADA: ")
-		     leia(codigo)		     
+			escreva("\nDIGITE O CODIGO DA OPCAO SELECIONADA: ")
+		     leia(codigo)
+		     limpa()		     
 
 		     escolha (codigo) {
 		     	caso 1: 
-		     	opcaoCorreta = verdadeiro
-		     	categoria = "BﾃヾICO"
-		     	tipo = 1
+		     	categoria = "BASICO"
+		     	opcaoValida = verdadeiro
 		     	pare
 	
 		     	caso 2:
-		     	opcaoCorreta = verdadeiro
-		     	categoria = "Mﾃ吋IO"
-		     	tipo = 2
+		     	categoria = "MEDIO"
+		     	opcaoValida = verdadeiro
 		     	pare
 	
 		     	caso 3: 
-		     	//usarBonus
-		     	opcaoCorreta = verdadeiro
-		     	categoria = "GRADUAﾃ�ﾃグ"
-		     	tipo = 3
+		     	categoria = "GRADUACAO"
+		     	opcaoValida = verdadeiro
 		     	pare
 	
 		     	caso 4:
-		     	//pedirCreditoPos
-		     	opcaoCorreta = verdadeiro
-		     	categoria = "Pﾃ鉄"
-		     	tipo = 4
+		     	categoria = "POS"
+		     	opcaoValida = verdadeiro
 		     	pare
 	
 		     	caso 5:
-		     	//usarCreditoMestrado
-		     	opcaoCorreta = verdadeiro
 		     	categoria = "MESTRADO"
-		     	tipo = 5
+		     	opcaoValida = verdadeiro
 		     	pare
 	
 		     	caso 6:
-		     	//sair
-		     	opcaoCorreta = verdadeiro
+		     	sair = verdadeiro
+		     	opcaoValida = verdadeiro
 		     	pare
 	
 		     	caso contrario:
 		     	limpa()
-		     	escreva("OPﾃ�ﾃグ INVﾃ´IDA. POR FAVOR, DIGITE UM Cﾃ泥IGO Vﾃ´IDO.")
+		     	escreva("OPCAO INVALIDA. POR FAVOR, DIGITE UM CODIGO VALIDO.")
 		     	Util.aguarde(3000)
 		     	limpa()
 		     }
-	     } enquanto (opcaoCorreta == falso)
-		limpa()
+	     } enquanto (opcaoValida == falso)
+		//limpa()
 
-	     escreva("--ESCOLA G6--\n")
-	     escreva("--SLOGAN--\n")
+		se (sair == falso) {
+		     escreva("ESCOLA G6\n")
+		     escreva(SLOGAN + "\n")
+	
+		     escreva("\nENSINO " + categoria + "\n")
+		     
+		     escreva("\nNOME: ")
+		     leia(nome)
+	
+		     escreva("\nDIA DE ANIVERSARIO: ")
+		     leia(diaAniversario)
+		     
+		     escreva("MATRICULA: ")
+		     leia(matricula)
+		     escreva("CPF: ")
+		     leia(cpf)
+		     escreva("STATUS (1 - ATIVO / 2 - INATIVO): ")
+		     leia(numeroStatus)
+		     se (numeroStatus == 1) {
+		     	status = verdadeiro
+		     }
+		     senao se (numeroStatus == 2) {
+		     	status = falso
+		     }
+	
+			inteiro contador = 0
+		     enquanto (contador < MOVIMENTOS e continuarMovimento == 'S') {
+		     	limpa()
+		     	escreva("MOVIMENTO: " + (contador+1) + "\n")
+		     	escreva("TOTAL DA NOTA ATUAL (" + pontos + ")\n\n")
+			    	escreva("MOVIMENTO (I - INCLUSAO DE NOTA / R - RETIRADA DE NOTA): ")
+			    	leia(operacao)
+	
+			     escreva("VALOR DO MOVIMENTO: ")
+			     leia(valorMovimento)
+	
+			     se (operacao == 'I') {
+			     	//adicionarNota
+			     	pontos = pontos + valorMovimento
+			     	movimentos[contador] = valorMovimento
+			    	}
+			    	senao se (operacao == 'R') {
+			    		//tirarNota
+			    		pontos = pontos - valorMovimento
+			    		movimentos[contador] = valorMovimento
+			    	}
 
-	     escreva("\nENSINO " + tipo + "\n") 
-	     
-	     escreva("\nNome: ")
-	     leia(nome)
+				limpa()
+			    	escreva("MOVIMENTO: " + (contador+1) + "\n")
+		     	escreva("TOTAL DA NOTA ATUAL (" + pontos + ")\n\n")
+			    	escreva("MOVIMENTO (I - INCLUSAO DE NOTA / R - RETIRADA DE NOTA): " + operacao + "\n")
+			    	escreva("VALOR DO MOVIMENTO: " + valorMovimento + "\n")
+			    	
+				se (contador < (MOVIMENTOS - 1)) {
+			     	escreva("CONTINUAR? (S/N): ")
+			     	leia(continuarMovimento)
+				}
+			     contador++
+		     }
+	
+		    escolha (codigo) {
+		    		//BASICO
+		    		caso 1: 
+		     	se (diaAniversario == Calendario.dia_mes_atual()){
+					pontos = (pontos * 0.1) + pontos
+				}
+				Util.aguarde(1000)
+		     	escreva("\nCARREGANDO ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	pare
+	
+				//MEDIO
+		     	caso 2:
+		     	para (inteiro outroContador = 2; outroContador >= 0; outroContador--) {
+		     		escreva("\nDESEJA SOLICITAR A EMISSAO DO BOLETIM? (S/N) (" + (outroContador + 1) + ") EMISSOES RESTANTE(S): ")
+		     		leia(solicitarBoletim)
+	
+		     		se (solicitarBoletim == 'S') {
+		     			escreva("QUAL LANCAMENTO? ")
+		     			leia(lancamento)
+		     									
+		     			escreva("LANCAMENTO " + lancamento + ": " + movimentos[lancamento-1] + "\n")
+		     		}
+		     		senao se (solicitarBoletim == 'N') {
+		     			pare
+		     		}
+		     	}
+		     	Util.aguarde(1000)
+		     	escreva("\nCARREGANDO ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	pare
+	
+		     	//GRADUACAO
+		     	caso 3:
+	               inteiro maisBonus = 2
+	          	se (pontos < 0){
+	          		pontos += maisBonus
+	          	}
+	          	Util.aguarde(1000)
+		     	escreva("\nCARREGANDO ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+	               pare
+	
+		     	//Pﾃ鉄
+		     	caso 4:
+				caracter creditoExtra = 'S'
+		     	real extra = 5.0
+	     		escreva("DESEJA UTILIZAR O VALOR DO CREDITO EXTRA (+5) (S/N)? :")
+	     		leia (creditoExtra)     
+	               se (creditoExtra == 'S'){
+	               	pontos += extra
+	               }
+	               Util.aguarde(1000)
+		     	escreva("\nCARREGANDO ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	pare
+	
+				//MESTRADO
+		     	caso 5:
+	               caracter limite = 'S'
+	               real creditos = 10.0
+	          	escreva("DESEJA UTILIZAR O VALOR DO CREDITO EXTRA (+10) (S/N)? :")
+	          	leia(limite)
+	          	se (limite == 'S'){
+	          		pontos += creditos
+	          	}
+	          	Util.aguarde(1000)
+		     	escreva("\nCARREGANDO ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	escreva(". ")
+		     	Util.aguarde(1000)
+		     	pare
+		     }
 
-	     escreva("\nDia de aniversﾃ｡rio: ")
-	     leia(diaAniversario)
-	     
-	     escreva("Matricula: ")
-	     leia(matricula)
-	     escreva("CPF: ")
-	     leia(cpf)
-	     escreva("Status (1 - Ativo / 2 - Inativo): ")
-	     leia(numeroStatus)
-	     se (numeroStatus == 1) {
-	     	status = verdadeiro
-	     }
-	     senao se (numeroStatus == 2) {
-	     	status = falso
-	     }
-
-		inteiro contador = 0
-	     enquanto (contador < 10 e continuarMovimento == 'S') {
-	     	limpa()
-	     	escreva("MOVIMENTO: " + (contador+1) + "\n")
-	     	escreva("Total atual (" + pontos + "): \n")
-		    	escreva("Movimento (I - Inclusﾃ｣o de Nota / R - Retirada de Nota): ")
-		    	leia(operacao)
-
-		     escreva("Valor do movimento: ")
-		     leia(valorMovimento)
-
-		     se (operacao == 'I') {
-		    		adicionarNota(pontos, valorMovimento, movimentos, contador)
-		    	}
-		    	senao se (operacao == 'R') {
-		    		tirarNota(pontos, valorMovimento, movimentos, contador)
-		    	}
-
-		     escreva("Continuar S/N: ")
-		     leia(continuarMovimento)
-		     contador++
-	     }
-
-	     se (tipo == 1) {
-	     	bonusAniversario(diaAniversario, pontos)
-	     }
-	     senao se (tipo == 2) {
-	     	para (inteiro outroContador = 2; outroContador > 0; outroContador--) {
-	     		escreva("Deseja solicitar a emissﾃ｣o do boletim? (S/N) (" + (outroContador + 1) + ") emissﾃｵe(s) restante(s): ")
-	     		leia(solicitarBoletim)
-
-	     		se (solicitarBoletim == 'S') {
-	     			escreva("Qual lanﾃｧamento? ")
-	     			leia(lancamento)
-					
-	     			escreva("Lanﾃｧamento " + lancamento + ": " + pedirBoletim (movimentos, (lancamento-1) ) + "\n")
-	     		}
-	     	}
-	     }
-
-		limpa()
-	     escreva("Total atual: " + pontos)
-
-	}
-
-	funcao vazio adicionarNota(real &pontos, real valor, real &movimentos[], inteiro contador) {
-		pontos = pontos + valor
-		movimentos[contador] = valor
-	}
-
-	funcao vazio tirarNota(real &pontos, real valor, real &movimentos[], inteiro contador) {
-		pontos = pontos - valor
-	}
-
-	funcao vazio bonusAniversario(inteiro &diaAniversario, real &pontos){
-		se (diaAniversario == Calendario.dia_mes_atual()){
-			pontos = (pontos * 0.1) + pontos
+			limpa()
+			escreva("DADOS CADASTRAIS\n\n")
+			escreva("NOME          : " + nome + "\n")
+			escreva("MATRICULA     : " + matricula + "\n")
+			escreva("CPF           : " + cpf + "\n")
+			escreva("ALUNE         : ")
+			se (status == verdadeiro){
+				escreva("ATIVO\n")
+			}
+			senao {
+				escreva("INATIVO\n")
+			}
+		     escreva("TOTAL DA NOTA : " + pontos + "\n")
 		}
-	}
-
-	funcao real pedirBoletim(real &movimentos[], inteiro contador){
-		retorne movimentos[contador]
+		escreva("------------------------------------------------------------------\n")
+		escreva(mensagemFim + "\n")
+		escreva(SLOGAN + "\n")
+		escreva("\n------------------------------------------------------------------")	
 	}
 }
-
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1060; 
+ * @POSICAO-CURSOR = 918; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
