@@ -23,11 +23,12 @@ public class Tarefa4 {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		final int PEOPLE_AMOUNT = 150;
+		final int PEOPLE_AMOUNT = 3;
 		int age = 0, totalPeople = 0, calmPeople = 0, angryWomen = 0, agressiveMen = 0, otherCalm = 0, angryPeopleOver40 = 0, calmPeopleUnder18 = 0;
 		char gender, temperament;
 
-		while (totalPeople <= PEOPLE_AMOUNT) {
+		while (totalPeople < PEOPLE_AMOUNT) {
+			System.out.println((totalPeople + 1) + "º pessoa");
 			System.out.print("Informe sua idade: ");
 			age = sc.nextInt();
 			System.out.print("Como você se identifica? (1 - Feminino / 2 - Masculino / 3 - Outro): ");
@@ -37,6 +38,7 @@ public class Tarefa4 {
 			System.out.println();
 
 			totalPeople++;
+			//Calma
 			if (temperament == '1') { 
 				calmPeople++;
 				if (gender == '3') { 
@@ -46,6 +48,7 @@ public class Tarefa4 {
 					calmPeopleUnder18++;
 				}
 			}
+			//Nervosa
 			else if (temperament == '2') {
 				if (gender == '1') {
 					angryWomen++;
@@ -54,6 +57,7 @@ public class Tarefa4 {
 					angryPeopleOver40++;
 				}
 			}
+			//Agressiva
 			else {
 				if (gender == '2') {
 					agressiveMen++;
@@ -62,12 +66,12 @@ public class Tarefa4 {
 		}
 
 		System.out.println();
-		System.out.println("Número de pessoas calmas: " + calmPeople);
-		System.out.println("Número de mulheres nervosas: " + angryWomen);
-		System.out.println("Número de homens agressivos: " + agressiveMen);
-		System.out.println("Número de outros calmos: " + otherCalm);
-		System.out.println("Número de pessoas nervoas acima de 40 anos: " + angryPeopleOver40);
-		System.out.println("Número de pessoas calmas abaixo de 18 anos: " + calmPeopleUnder18);
+		System.out.println("Pessoas calmas                  : " + calmPeople);
+		System.out.println("Mulheres nervosas               : " + angryWomen);
+		System.out.println("Homens agressivos               : " + agressiveMen);
+		System.out.println("Outros calmos                   : " + otherCalm);
+		System.out.println("Pessoas nervoas acima de 40 anos: " + angryPeopleOver40);
+		System.out.println("Pessoas calmas abaixo de 18 anos: " + calmPeopleUnder18);
 
 		sc.close();
 	}
