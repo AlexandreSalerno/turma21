@@ -1,4 +1,4 @@
-package entities;
+package lista5;
 
 public class Cliente {
 	private int codigo;
