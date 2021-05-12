@@ -1,4 +1,9 @@
-package lista7;
+package lista7.application;
+
+import lista7.entities.Animal;
+import lista7.entities.Cachorro;
+import lista7.entities.Cavalo;
+import lista7.entities.Preguica;
 
 public class ProgramaAnimais {
 	public static void main(String[] args) {

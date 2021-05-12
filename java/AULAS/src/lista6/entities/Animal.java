@@ -1,4 +1,4 @@
-package lista6;
+package lista6.entities;
 
 public abstract class Animal {
 	private String nome;

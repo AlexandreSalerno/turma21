@@ -1,9 +1,11 @@
-package lista5;
+package lista5.application;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+
+import lista5.entities.Cliente;
 
 public class ProgramaCliente {
 	public static void main(String[] args) {

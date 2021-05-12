@@ -1,18 +1,16 @@
-package lista6;
+package lista7.entities;
 
 public class Preguica extends Animal {
 
 	public Preguica(String nome, int idade) {
 		super(nome, idade);
 	}
-	
-	@Override
+
 	public void som() {
-		System.out.println("Aaaaaaaah (gritando)");
+		System.out.println("Preguiça: Aaaaaaaah (gritando)");
 	}
-	
-	@Override
+
 	public void acao() {
-		System.out.println("Crk crk crk (subindo em árvores)");
+		System.out.println("Preguiça: Crk crk crk (subindo em árvores)");
 	}
 }

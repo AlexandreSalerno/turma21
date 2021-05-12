@@ -1,8 +1,10 @@
-package lista5;
+package lista5.application;
 
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
+
+import lista5.entities.ContaBancaria;
 
 public class ProgramaContaBancaria {
 	public static void main(String[] args) {

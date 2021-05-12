@@ -1,4 +1,4 @@
-package lista7;
+package lista6.entities;
 
 public class Cavalo extends Animal {
 
@@ -6,11 +6,13 @@ public class Cavalo extends Animal {
 		super(nome, idade);
 	}
 
+	@Override
 	public void som() {
-		System.out.println("Cavalo: HHIRRRRR (relinchando)");
+		System.out.println("HHIRRRRR (relinchando)");
 	}
-
+	
+	@Override
 	public void acao() {
-		System.out.println("Cavalo: Pocotó pocotó pocotó (correndo)");
+		System.out.println("Pocotó pocotó pocotó (correndo)");
 	}
 }

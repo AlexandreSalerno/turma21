@@ -1,4 +1,4 @@
-package lista5;
+package lista5.entities;
 
 public class ContaBancaria {
 	private int numero;

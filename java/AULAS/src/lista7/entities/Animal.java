@@ -1,4 +1,7 @@
-package lista7;
+package lista7.entities;
+
+import lista7.utils.Acao;
+import lista7.utils.Som;
 
 public abstract class Animal implements Som, Acao {
 	private String nome;

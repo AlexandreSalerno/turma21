@@ -1,4 +1,4 @@
-package lista6;
+package lista6.entities;
 
 public class Cachorro extends Animal {
 
