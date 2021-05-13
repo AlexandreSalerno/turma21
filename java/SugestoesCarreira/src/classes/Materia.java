@@ -29,16 +29,13 @@ public abstract class Materia {
 	//Engajamento (quantas faltas voce teve em um periodo) - recomendar carreira baseado em engajamento (filtro)
 	protected char engajamento() {
 		if(faltas <= 10) {
-			return 'B'; //Ideia = retornar uma letra baseado na quantidade de faltas (por exemplo - B de Bom)
-			//Aparece tudo
+			return 'B';
 		}
 		else if (faltas <= 20) {
 			return 'M';
-			//Aparece +/-
 		}
 		else {
 			return 'R';
-			//Aparece nada
 		}
 	}
 	
