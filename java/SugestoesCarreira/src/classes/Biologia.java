@@ -1,8 +1,8 @@
 package classes;
 
-public class Portugues extends Materia {
+public class Biologia extends Materia {
 
-	public Portugues(double nota, int faltas, char op) {
+	public Biologia(double nota, int faltas, char op) {
 		super(nota, faltas, op);
 	}
 
@@ -32,12 +32,11 @@ public class Portugues extends Materia {
 				System.out.print("Seu engajamento está bom. Porém procure melhorar suas faltas. ");
 			}
 			System.out.println("Lista de sugestões a seguir nesta área:");
-			System.out.println("1 - Jornalismo               (X)");
-			System.out.println("2 - Letras                   (X)");
-			System.out.println("3 - Direito                  (X)");
-			System.out.println("4 - Publicidade e Propaganda (X)");
-			System.out.println("5 - Ciências Sociais         (X)");
-
+			System.out.println("1 - Nutrição               (X)");
+			System.out.println("2 - Educação Fisica        (X)");
+			System.out.println("3 - Medicina               (X)");
+			System.out.println("4 - Professor de Biologia  (X)");
+			System.out.println("5 - Biologia Marinha       (X)");
 		} else if (engajamento() == 'M' || engajamento() == 'm') {
 			if (engajamento() == 'M') {
 				System.out.print("Seu engajamento está médio. ");
@@ -45,11 +44,11 @@ public class Portugues extends Materia {
 				System.out.print("Seu engajamento está médio. Porém procure melhorar suas faltas. ");
 			}
 			System.out.println("Lista de sugestões a seguir nesta área:");
-			System.out.println("1 - Jornalismo               ( )");
-			System.out.println("2 - Letras                   (X)");
-			System.out.println("3 - Direito                  ( )");
-			System.out.println("4 - Publicidade e Propaganda (X)");
-			System.out.println("5 - Ciências Sociais         (X)");
+			System.out.println("1 - Nutrição               ( )");
+			System.out.println("2 - Educação Fisica        (X)");
+			System.out.println("3 - Medicina               ( )");
+			System.out.println("4 - Professor de Biologia  (X)");
+			System.out.println("5 - Biologia Marinha       (X)");
 		} else {
 			if (engajamento() == 'R') {
 				System.out.print("Seu engajamento está ruim. Procure melhorar nas notas da matéria.");
@@ -57,11 +56,11 @@ public class Portugues extends Materia {
 				System.out.print("Seu engajamento está ruim. Procure melhorar nas notas e faltas da matéria. ");
 			}
 			System.out.println("Lista de sugestões a seguir nesta área:");
-			System.out.println("1 - Jornalismo               ( )");
-			System.out.println("2 - Letras                   ( )");
-			System.out.println("3 - Direito                  ( )");
-			System.out.println("4 - Publicidade e Propaganda ( )");
-			System.out.println("5 - Ciências Sociais         ( )");
+			System.out.println("1 - Nutrição               ( )");
+			System.out.println("2 - Educação Fisica        ( )");
+			System.out.println("3 - Medicina               ( )");
+			System.out.println("4 - Professor de Biologia  ( )");
+			System.out.println("5 - Biologia Marinha       ( )");
 		}
 	}
 
@@ -69,15 +68,17 @@ public class Portugues extends Materia {
 	public void opcao() {
 
 		if (op == '1') {
-			System.out.println("Imprime opcao..." + 1);
+			System.out.println("Nutrição: \n" + "- Medicina voltada pra área de uma alimentação mais saudável.");
 		} else if (op == '2') {
-			System.out.println("Imprime opcao..." + 2);
+			System.out.println("Educação física: \n"
+					+ "- Profissional que trabalha as habiladades com o corpo e exercícios físicos.");
 		} else if (op == '3') {
-			System.out.println("Imprime opcao..." + 3);
+			System.out.println("Medicina:  \n" + "- Profissionais que diagosticam e cuidam da saúde da população.");
 		} else if (op == '4') {
-			System.out.println("Imprime opcao..." + 4);
+			System.out.println("Professor de biologia\r\n" + "- Professional que leciona em escolas ou universidades.");
 		} else {
-			System.out.println("Imprime opcao..." + 5);
+			System.out.println("Biologia marinha: \n"
+					+ "- Profissionais que estudam os organismos que vivem no ecossistema salgado.");
 		}
 	}
 }
